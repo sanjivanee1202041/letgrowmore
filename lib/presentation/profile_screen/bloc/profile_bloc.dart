@@ -32,9 +32,10 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     Emitter<ProfileState> emit,
   ) async {
     emit(state.copyWith(
-        firstNameController: TextEditingController(),
-        lastNameController: TextEditingController(),
-        phoneNumberController: TextEditingController()));
+        firstNameEditTextController: TextEditingController(),
+        lastNameEditTextController: TextEditingController(),
+        phoneNumberEditTextController: TextEditingController(),
+        dateOfBirthEditTextController: TextEditingController()));
     emit(state.copyWith(
         profileModelObj: state.profileModelObj
             ?.copyWith(dropdownItemList: fillDropdownItemList())));

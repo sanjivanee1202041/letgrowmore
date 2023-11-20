@@ -51,7 +51,7 @@ class CustomIconButton extends StatelessWidget {
             decoration: decoration ??
                 BoxDecoration(
                   color: theme.colorScheme.onErrorContainer,
-                  borderRadius: BorderRadius.circular(22.h),
+                  borderRadius: BorderRadius.circular(15.h),
                 ),
             child: child,
           ),
@@ -62,8 +62,12 @@ class CustomIconButton extends StatelessWidget {
 
 /// Extension on [CustomIconButton] to facilitate inclusion of all types of border style etc
 extension IconButtonStyleHelper on CustomIconButton {
-  static BoxDecoration get fillErrorContainer => BoxDecoration(
+  static BoxDecoration get fillPrimary => BoxDecoration(
+        color: theme.colorScheme.primary,
+        borderRadius: BorderRadius.circular(23.h),
+      );
+  static BoxDecoration get fillErrorContainerTL15 => BoxDecoration(
         color: theme.colorScheme.errorContainer,
-        borderRadius: BorderRadius.circular(22.h),
+        borderRadius: BorderRadius.circular(15.h),
       );
 }

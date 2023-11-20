@@ -15,14 +15,14 @@ class CustomBottomBarState extends State<CustomBottomBar> {
 
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
+      icon: ImageConstant.imgSearchProperty,
+      activeIcon: ImageConstant.imgSearchProperty,
+      type: BottomBarEnum.Searchproperty,
+    ),
+    BottomMenuModel(
       icon: ImageConstant.imgAddReminder,
       activeIcon: ImageConstant.imgAddReminder,
       type: BottomBarEnum.Addreminder,
-    ),
-    BottomMenuModel(
-      icon: ImageConstant.imgFindClinic,
-      activeIcon: ImageConstant.imgFindClinic,
-      type: BottomBarEnum.Findclinic,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgTestAccount,
@@ -39,11 +39,11 @@ class CustomBottomBarState extends State<CustomBottomBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 82.v,
+      height: 56.v,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment(0.5, 0),
-          end: Alignment(0.5, 0.98),
+          begin: Alignment(0.5, 0.02),
+          end: Alignment(0.5, 1),
           colors: [
             theme.colorScheme.primary,
             theme.colorScheme.onPrimary,
@@ -62,13 +62,13 @@ class CustomBottomBarState extends State<CustomBottomBar> {
           return BottomNavigationBarItem(
             icon: CustomImageView(
               imagePath: bottomMenuList[index].icon,
-              height: 62.v,
-              width: 64.h,
+              height: 45.v,
+              width: 40.h,
             ),
             activeIcon: CustomImageView(
               imagePath: bottomMenuList[index].activeIcon,
-              height: 66.v,
-              width: 59.h,
+              height: 49.v,
+              width: 44.h,
             ),
             label: '',
           );
@@ -84,8 +84,8 @@ class CustomBottomBarState extends State<CustomBottomBar> {
 }
 
 enum BottomBarEnum {
+  Searchproperty,
   Addreminder,
-  Findclinic,
   Testaccount,
   Gear,
 }

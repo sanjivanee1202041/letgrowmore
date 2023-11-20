@@ -3,7 +3,8 @@ import 'models/hospital_details_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as fs;
 import 'package:holisticheal/core/app_export.dart';
-import 'package:holisticheal/presentation/hospitals_list_page/hospitals_list_page.dart';
+import 'package:holisticheal/presentation/hospitals_list_container_page/hospitals_list_container_page.dart';
+import 'package:holisticheal/presentation/map_page/map_page.dart';
 import 'package:holisticheal/widgets/app_bar/appbar_leading_image.dart';
 import 'package:holisticheal/widgets/app_bar/appbar_title.dart';
 import 'package:holisticheal/widgets/app_bar/custom_app_bar.dart';
@@ -38,37 +39,131 @@ class HospitalDetailsScreen extends StatelessWidget {
           child: Scaffold(
             appBar: _buildAppBar(context),
             body: Container(
-              width: double.maxFinite,
+              width: 362.h,
               padding: EdgeInsets.symmetric(horizontal: 17.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  SizedBox(height: 12.v),
+                  SizedBox(height: 8.v),
                   CustomImageView(
-                    imagePath: ImageConstant.imgImage2286x361,
-                    height: 286.v,
-                    width: 361.h,
+                    imagePath: ImageConstant.imgImage2195x246,
+                    height: 195.v,
+                    width: 246.h,
                     radius: BorderRadius.circular(
-                      72.h,
+                      49.h,
                     ),
-                    alignment: Alignment.center,
+                    margin: EdgeInsets.only(left: 10.h),
                   ),
-                  SizedBox(height: 28.v),
-                  Container(
-                    width: 328.h,
-                    margin: EdgeInsets.only(
-                      left: 9.h,
-                      right: 58.h,
-                    ),
+                  SizedBox(height: 19.v),
+                  SizedBox(
+                    width: 224.h,
                     child: Text(
                       "msg_name_ayurvaid".tr,
                       maxLines: 10,
                       overflow: TextOverflow.ellipsis,
-                      style: CustomTextStyles.titleLarge21,
+                      style: CustomTextStyles.bodyMedium14,
                     ),
                   ),
-                  SizedBox(height: 23.v),
-                  _buildHospitalDetails(context),
+                  SizedBox(height: 16.v),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 7.h,
+                      right: 62.h,
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 75.v,
+                          width: 66.h,
+                          margin: EdgeInsets.only(
+                            top: 17.v,
+                            bottom: 38.v,
+                          ),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 13.h,
+                            vertical: 8.v,
+                          ),
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: fs.Svg(
+                                ImageConstant.imgEllipse9,
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: CustomImageView(
+                            imagePath: ImageConstant.imgSearchProperty,
+                            height: 43.v,
+                            width: 38.h,
+                            alignment: Alignment.topCenter,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 25.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CustomElevatedButton(
+                                height: 47.v,
+                                width: 147.h,
+                                text: "lbl_direction".tr,
+                                rightIcon: Container(
+                                  child: CustomImageView(
+                                    imagePath: ImageConstant.imgUndo,
+                                    height: 47.v,
+                                    width: 39.h,
+                                  ),
+                                ),
+                                buttonStyle: CustomButtonStyles.none,
+                                buttonTextStyle:
+                                    CustomTextStyles.titleLargeLightgreenA200,
+                              ),
+                              SizedBox(height: 35.v),
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    SizedBox(
+                                      height: 49.v,
+                                      width: 89.h,
+                                      child: Stack(
+                                        alignment: Alignment.centerLeft,
+                                        children: [
+                                          CustomImageView(
+                                            imagePath:
+                                                ImageConstant.imgTestAccount,
+                                            height: 49.v,
+                                            width: 44.h,
+                                            alignment: Alignment.centerRight,
+                                          ),
+                                          CustomImageView(
+                                            imagePath:
+                                                ImageConstant.imgFindClinic,
+                                            height: 45.v,
+                                            width: 54.h,
+                                            alignment: Alignment.centerLeft,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    CustomImageView(
+                                      imagePath: ImageConstant.imgGear,
+                                      height: 49.v,
+                                      width: 44.h,
+                                      margin: EdgeInsets.only(left: 10.h),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -82,105 +177,19 @@ class HospitalDetailsScreen extends StatelessWidget {
   /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
-      leadingWidth: 86.h,
+      leadingWidth: 58.h,
       leading: AppbarLeadingImage(
         imagePath: ImageConstant.imgBackTo,
         margin: EdgeInsets.only(
-          left: 34.h,
-          bottom: 37.v,
+          left: 23.h,
+          bottom: 25.v,
         ),
       ),
-      centerTitle: true,
       title: AppbarTitle(
         text: "lbl_details".tr,
-        margin: EdgeInsets.only(top: 55.v),
-      ),
-    );
-  }
-
-  /// Section Widget
-  Widget _buildHospitalDetails(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerRight,
-      child: Padding(
-        padding: EdgeInsets.only(left: 20.h),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: 111.v,
-              width: 98.h,
-              margin: EdgeInsets.only(
-                top: 26.v,
-                bottom: 57.v,
-              ),
-              padding: EdgeInsets.symmetric(
-                horizontal: 20.h,
-                vertical: 12.v,
-              ),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: fs.Svg(
-                    ImageConstant.imgEllipse9,
-                  ),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: CustomImageView(
-                imagePath: ImageConstant.imgSearchProperty,
-                height: 64.v,
-                width: 57.h,
-                alignment: Alignment.topCenter,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 16.h),
-              child: Column(
-                children: [
-                  CustomElevatedButton(
-                    height: 70.v,
-                    width: 216.h,
-                    text: "lbl_direction".tr,
-                    rightIcon: Container(
-                      child: CustomImageView(
-                        imagePath: ImageConstant.imgUndo,
-                        height: 70.v,
-                        width: 58.h,
-                      ),
-                    ),
-                    buttonStyle: CustomButtonStyles.none,
-                    buttonTextStyle:
-                        CustomTextStyles.headlineLargeLightgreenA200,
-                  ),
-                  SizedBox(height: 52.v),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CustomImageView(
-                        imagePath: ImageConstant.imgFindClinic,
-                        height: 66.v,
-                        width: 80.h,
-                        margin: EdgeInsets.symmetric(vertical: 3.v),
-                      ),
-                      Spacer(),
-                      CustomImageView(
-                        imagePath: ImageConstant.imgTestAccount,
-                        height: 72.v,
-                        width: 65.h,
-                      ),
-                      CustomImageView(
-                        imagePath: ImageConstant.imgGear,
-                        height: 72.v,
-                        width: 65.h,
-                        margin: EdgeInsets.only(left: 16.h),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
+        margin: EdgeInsets.only(
+          left: 57.h,
+          top: 37.v,
         ),
       ),
     );
@@ -199,10 +208,10 @@ class HospitalDetailsScreen extends StatelessWidget {
   ///Handling route based on bottom click actions
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
+      case BottomBarEnum.Searchproperty:
+        return AppRoutes.mapPage;
       case BottomBarEnum.Addreminder:
-        return AppRoutes.hospitalsListPage;
-      case BottomBarEnum.Findclinic:
-        return "/";
+        return AppRoutes.hospitalsListContainerPage;
       case BottomBarEnum.Testaccount:
         return "/";
       case BottomBarEnum.Gear:
@@ -218,8 +227,10 @@ class HospitalDetailsScreen extends StatelessWidget {
     String currentRoute,
   ) {
     switch (currentRoute) {
-      case AppRoutes.hospitalsListPage:
-        return HospitalsListPage.builder(context);
+      case AppRoutes.mapPage:
+        return MapPage.builder(context);
+      case AppRoutes.hospitalsListContainerPage:
+        return HospitalsListContainerPage.builder(context);
       default:
         return DefaultWidget();
     }

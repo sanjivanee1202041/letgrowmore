@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:holisticheal/core/app_export.dart';
 import 'package:holisticheal/core/utils/validation_functions.dart';
 import 'package:holisticheal/widgets/custom_elevated_button.dart';
+import 'package:holisticheal/widgets/custom_icon_button.dart';
 import 'package:holisticheal/widgets/custom_text_form_field.dart';
 
 // ignore_for_file: must_be_immutable
@@ -29,51 +30,56 @@ class SignupScreen extends StatelessWidget {
             body: Form(
                 key: _formKey,
                 child: Container(
-                    width: double.maxFinite,
+                    width: 362.h,
                     padding:
-                        EdgeInsets.symmetric(horizontal: 22.h, vertical: 16.v),
+                        EdgeInsets.symmetric(horizontal: 28.h, vertical: 11.v),
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          SizedBox(height: 52.v),
-                          SizedBox(
-                              height: 292.v,
-                              width: 333.h,
-                              child: Stack(
-                                  alignment: Alignment.topCenter,
-                                  children: [
-                                    Align(
-                                        alignment: Alignment.bottomCenter,
-                                        child: Text("lbl_sign_up_now".tr,
-                                            style: CustomTextStyles
-                                                .headlineLargeTeal900)),
-                                    CustomImageView(
-                                        imagePath:
-                                            ImageConstant.img4222Copy1263x333,
-                                        height: 263.v,
-                                        width: 333.h,
-                                        alignment: Alignment.topCenter)
-                                  ])),
-                          SizedBox(height: 11.v),
-                          Text("msg_please_fill_the".tr,
-                              style: theme.textTheme.titleLarge),
-                          SizedBox(height: 14.v),
-                          _buildFullName(context),
-                          SizedBox(height: 11.v),
-                          _buildEmail(context),
-                          SizedBox(height: 11.v),
-                          _buildPassword(context),
-                          SizedBox(height: 6.v),
+                          SizedBox(height: 35.v),
                           Align(
                               alignment: Alignment.centerLeft,
+                              child: Container(
+                                  height: 200.v,
+                                  width: 227.h,
+                                  margin: EdgeInsets.only(left: 16.h),
+                                  child: Stack(
+                                      alignment: Alignment.topCenter,
+                                      children: [
+                                        Align(
+                                            alignment: Alignment.bottomCenter,
+                                            child: Text("lbl_sign_up_now".tr,
+                                                style: CustomTextStyles
+                                                    .titleLargeTeal900)),
+                                        CustomImageView(
+                                            imagePath: ImageConstant
+                                                .img4222Copy1263x333,
+                                            height: 180.v,
+                                            width: 227.h,
+                                            alignment: Alignment.topCenter)
+                                      ]))),
+                          SizedBox(height: 7.v),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text("msg_please_fill_the".tr,
+                                  style: theme.textTheme.bodyMedium)),
+                          SizedBox(height: 10.v),
+                          _buildFullName(context),
+                          SizedBox(height: 7.v),
+                          _buildEmail(context),
+                          SizedBox(height: 7.v),
+                          _buildPassword(context),
+                          SizedBox(height: 3.v),
+                          Align(
+                              alignment: Alignment.centerRight,
                               child: Padding(
-                                  padding: EdgeInsets.only(left: 22.h),
+                                  padding: EdgeInsets.only(right: 39.h),
                                   child: Text("msg_password_must_me".tr,
-                                      textAlign: TextAlign.center,
-                                      style: theme.textTheme.bodyLarge))),
-                          SizedBox(height: 11.v),
+                                      style: CustomTextStyles
+                                          .bodySmallInterBlack900))),
+                          SizedBox(height: 8.v),
                           _buildLogin(context),
-                          SizedBox(height: 13.v),
+                          SizedBox(height: 9.v),
                           GestureDetector(
                               onTap: () {
                                 onTapTxtDonthaveanaccount3(context);
@@ -82,16 +88,16 @@ class SignupScreen extends StatelessWidget {
                                   text: TextSpan(children: [
                                     TextSpan(
                                         text: "msg_don_t_have_an_account2".tr,
-                                        style: theme.textTheme.titleLarge),
+                                        style: theme.textTheme.bodyMedium),
                                     TextSpan(
                                         text: "lbl_login2".tr,
                                         style: CustomTextStyles
-                                            .titleLargePrimaryContainer)
+                                            .bodyMediumPrimaryContainer)
                                   ]),
                                   textAlign: TextAlign.left)),
-                          SizedBox(height: 32.v),
+                          SizedBox(height: 22.v),
                           Text("lbl_or_connect_with".tr,
-                              style: theme.textTheme.titleLarge)
+                              style: theme.textTheme.bodyMedium)
                         ]))),
             bottomNavigationBar: _buildGooglePlus(context)));
   }
@@ -99,7 +105,7 @@ class SignupScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildFullName(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(left: 16.h, right: 5.h),
+        padding: EdgeInsets.only(left: 18.h, right: 25.h),
         child: BlocSelector<SignupBloc, SignupState, TextEditingController?>(
             selector: (state) => state.fullNameController,
             builder: (context, fullNameController) {
@@ -113,8 +119,8 @@ class SignupScreen extends StatelessWidget {
                     return null;
                   },
                   contentPadding:
-                      EdgeInsets.symmetric(horizontal: 14.h, vertical: 15.v),
-                  borderDecoration: TextFormFieldStyleHelper.fillBlueGrayA,
+                      EdgeInsets.symmetric(horizontal: 4.h, vertical: 10.v),
+                  borderDecoration: TextFormFieldStyleHelper.fillBlueGrayATL10,
                   filled: true,
                   fillColor: appTheme.blueGray100A0);
             }));
@@ -123,7 +129,7 @@ class SignupScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildEmail(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(left: 19.h, right: 2.h),
+        padding: EdgeInsets.only(left: 18.h, right: 25.h),
         child: BlocSelector<SignupBloc, SignupState, TextEditingController?>(
             selector: (state) => state.emailController,
             builder: (context, emailController) {
@@ -139,8 +145,8 @@ class SignupScreen extends StatelessWidget {
                     return null;
                   },
                   contentPadding:
-                      EdgeInsets.symmetric(horizontal: 13.h, vertical: 16.v),
-                  borderDecoration: TextFormFieldStyleHelper.fillBlueGrayA,
+                      EdgeInsets.symmetric(horizontal: 5.h, vertical: 11.v),
+                  borderDecoration: TextFormFieldStyleHelper.fillBlueGrayATL10,
                   filled: true,
                   fillColor: appTheme.blueGray100A0);
             }));
@@ -149,7 +155,7 @@ class SignupScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildPassword(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(left: 19.h, right: 2.h),
+        padding: EdgeInsets.only(left: 18.h, right: 25.h),
         child: BlocSelector<SignupBloc, SignupState, TextEditingController?>(
             selector: (state) => state.passwordController,
             builder: (context, passwordController) {
@@ -166,7 +172,9 @@ class SignupScreen extends StatelessWidget {
                     return null;
                   },
                   obscureText: true,
-                  borderDecoration: TextFormFieldStyleHelper.fillBlueGrayATL15,
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 8.h, vertical: 12.v),
+                  borderDecoration: TextFormFieldStyleHelper.fillBlueGrayATL101,
                   filled: true,
                   fillColor: appTheme.blueGray100A0.withOpacity(0.72));
             }));
@@ -174,31 +182,26 @@ class SignupScreen extends StatelessWidget {
 
   /// Section Widget
   Widget _buildLogin(BuildContext context) {
-    return CustomElevatedButton(
-        text: "lbl_login".tr, margin: EdgeInsets.symmetric(horizontal: 43.h));
+    return CustomElevatedButton(width: 203.h, text: "lbl_login".tr);
   }
 
   /// Section Widget
   Widget _buildGooglePlus(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(left: 112.h, right: 112.h, bottom: 28.v),
+        padding: EdgeInsets.only(left: 111.h, right: 111.h, bottom: 19.v),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           CustomImageView(
               imagePath: ImageConstant.imgGooglePlus,
-              height: 86.v,
-              width: 84.h),
-          Container(
-              height: 69.adaptSize,
-              width: 69.adaptSize,
-              margin: EdgeInsets.only(left: 52.h, top: 8.v, bottom: 8.v),
-              padding: EdgeInsets.symmetric(horizontal: 11.h, vertical: 9.v),
-              decoration: AppDecoration.fillPrimary
-                  .copyWith(borderRadius: BorderRadiusStyle.roundedBorder34),
-              child: CustomImageView(
-                  imagePath: ImageConstant.imgPhone,
-                  height: 51.v,
-                  width: 47.h,
-                  alignment: Alignment.center))
+              height: 58.v,
+              width: 57.h),
+          Padding(
+              padding: EdgeInsets.only(left: 35.h, top: 6.v, bottom: 5.v),
+              child: CustomIconButton(
+                  height: 47.adaptSize,
+                  width: 47.adaptSize,
+                  padding: EdgeInsets.all(6.h),
+                  decoration: IconButtonStyleHelper.fillPrimary,
+                  child: CustomImageView(imagePath: ImageConstant.imgPhone)))
         ]));
   }
 

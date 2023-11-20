@@ -5,18 +5,21 @@ part of 'profile_bloc.dart';
 /// Represents the state of Profile in the application.
 class ProfileState extends Equatable {
   ProfileState({
-    this.firstNameController,
-    this.lastNameController,
-    this.phoneNumberController,
+    this.firstNameEditTextController,
+    this.lastNameEditTextController,
+    this.phoneNumberEditTextController,
+    this.dateOfBirthEditTextController,
     this.selectedDropDownValue,
     this.profileModelObj,
   });
 
-  TextEditingController? firstNameController;
+  TextEditingController? firstNameEditTextController;
 
-  TextEditingController? lastNameController;
+  TextEditingController? lastNameEditTextController;
 
-  TextEditingController? phoneNumberController;
+  TextEditingController? phoneNumberEditTextController;
+
+  TextEditingController? dateOfBirthEditTextController;
 
   SelectionPopupModel? selectedDropDownValue;
 
@@ -24,24 +27,30 @@ class ProfileState extends Equatable {
 
   @override
   List<Object?> get props => [
-        firstNameController,
-        lastNameController,
-        phoneNumberController,
+        firstNameEditTextController,
+        lastNameEditTextController,
+        phoneNumberEditTextController,
+        dateOfBirthEditTextController,
         selectedDropDownValue,
         profileModelObj,
       ];
   ProfileState copyWith({
-    TextEditingController? firstNameController,
-    TextEditingController? lastNameController,
-    TextEditingController? phoneNumberController,
+    TextEditingController? firstNameEditTextController,
+    TextEditingController? lastNameEditTextController,
+    TextEditingController? phoneNumberEditTextController,
+    TextEditingController? dateOfBirthEditTextController,
     SelectionPopupModel? selectedDropDownValue,
     ProfileModel? profileModelObj,
   }) {
     return ProfileState(
-      firstNameController: firstNameController ?? this.firstNameController,
-      lastNameController: lastNameController ?? this.lastNameController,
-      phoneNumberController:
-          phoneNumberController ?? this.phoneNumberController,
+      firstNameEditTextController:
+          firstNameEditTextController ?? this.firstNameEditTextController,
+      lastNameEditTextController:
+          lastNameEditTextController ?? this.lastNameEditTextController,
+      phoneNumberEditTextController:
+          phoneNumberEditTextController ?? this.phoneNumberEditTextController,
+      dateOfBirthEditTextController:
+          dateOfBirthEditTextController ?? this.dateOfBirthEditTextController,
       selectedDropDownValue:
           selectedDropDownValue ?? this.selectedDropDownValue,
       profileModelObj: profileModelObj ?? this.profileModelObj,

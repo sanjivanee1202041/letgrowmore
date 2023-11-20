@@ -44,7 +44,9 @@ class CustomSwitch extends StatelessWidget {
   Widget get switchWidget => CupertinoSwitch(
         value: value ?? false,
         trackColor: appTheme.gray200,
-        thumbColor: (value ?? false) ? appTheme.gray500 : appTheme.gray500,
+        thumbColor: (value ?? false)
+            ? theme.colorScheme.secondaryContainer
+            : theme.colorScheme.secondaryContainer,
         activeColor: appTheme.gray200,
         onChanged: (value) {
           onChange(value);

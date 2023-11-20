@@ -19,7 +19,7 @@ final Map<String, String> enUs = {
   // Map Screen
   "lbl_search_hospital": "Search Hospital",
 
-  // Hospitals List Screen
+  // Hospitals List - Container Screen
   "msg_name_ayurvaid_location":
       "Name: AyurVAID\nlocation: Domlur Extension, Bengaluru",
   "msg_name_maharshi_ayurveda":

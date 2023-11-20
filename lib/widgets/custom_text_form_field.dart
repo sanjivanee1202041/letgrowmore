@@ -87,7 +87,7 @@ class CustomTextFormField extends StatelessWidget {
           controller: controller,
           focusNode: focusNode ?? FocusNode(),
           autofocus: autofocus!,
-          style: textStyle ?? theme.textTheme.bodyMedium,
+          style: textStyle ?? CustomTextStyles.bodySmallErrorContainer,
           obscureText: obscureText!,
           textInputAction: textInputAction,
           keyboardType: textInputType,
@@ -98,16 +98,17 @@ class CustomTextFormField extends StatelessWidget {
       );
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",
-        hintStyle: hintStyle ?? theme.textTheme.headlineSmall,
+        hintStyle: hintStyle ?? theme.textTheme.bodyLarge,
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
         suffixIconConstraints: suffixConstraints,
         isDense: true,
         contentPadding: contentPadding ??
-            EdgeInsets.symmetric(
-              horizontal: 16.h,
-              vertical: 18.v,
+            EdgeInsets.only(
+              left: 10.h,
+              top: 12.v,
+              bottom: 12.v,
             ),
         fillColor: fillColor,
         filled: filled,
@@ -128,12 +129,12 @@ class CustomTextFormField extends StatelessWidget {
 
 /// Extension on [CustomTextFormField] to facilitate inclusion of all types of border style etc
 extension TextFormFieldStyleHelper on CustomTextFormField {
-  static OutlineInputBorder get fillBlueGrayA => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(15.h),
+  static OutlineInputBorder get fillBlueGrayATL10 => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10.h),
         borderSide: BorderSide.none,
       );
-  static OutlineInputBorder get fillBlueGrayATL15 => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(15.h),
+  static OutlineInputBorder get fillBlueGrayATL101 => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10.h),
         borderSide: BorderSide.none,
       );
 }

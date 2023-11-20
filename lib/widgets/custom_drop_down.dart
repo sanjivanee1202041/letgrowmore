@@ -81,14 +81,14 @@ class CustomDropDown extends StatelessWidget {
           focusNode: focusNode ?? FocusNode(),
           icon: icon,
           autofocus: autofocus!,
-          style: textStyle ?? theme.textTheme.bodyMedium,
+          style: textStyle ?? CustomTextStyles.bodySmallErrorContainer,
           items: items?.map((SelectionPopupModel item) {
             return DropdownMenuItem<SelectionPopupModel>(
               value: item,
               child: Text(
                 item.title,
                 overflow: TextOverflow.ellipsis,
-                style: hintStyle ?? theme.textTheme.bodyMedium,
+                style: hintStyle ?? CustomTextStyles.bodySmallErrorContainer,
               ),
             );
           }).toList(),
@@ -101,7 +101,7 @@ class CustomDropDown extends StatelessWidget {
       );
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",
-        hintStyle: hintStyle ?? theme.textTheme.bodyMedium,
+        hintStyle: hintStyle ?? CustomTextStyles.bodySmallErrorContainer,
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
@@ -109,9 +109,9 @@ class CustomDropDown extends StatelessWidget {
         isDense: true,
         contentPadding: contentPadding ??
             EdgeInsets.only(
-              left: 16.h,
-              top: 18.v,
-              bottom: 18.v,
+              left: 10.h,
+              top: 12.v,
+              bottom: 12.v,
             ),
         fillColor: fillColor,
         filled: filled,

@@ -49,7 +49,7 @@ class ThemeHelper {
         style: ElevatedButton.styleFrom(
           backgroundColor: colorScheme.primary,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(22.h),
+            borderRadius: BorderRadius.circular(15.h),
           ),
           visualDensity: const VisualDensity(
             vertical: -4,
@@ -83,14 +83,14 @@ class TextThemes {
           fontWeight: FontWeight.w400,
         ),
         bodyMedium: TextStyle(
-          color: colorScheme.errorContainer,
+          color: appTheme.black900,
           fontSize: 13.fSize,
-          fontFamily: 'DM Sans',
+          fontFamily: 'Inter',
           fontWeight: FontWeight.w400,
         ),
         bodySmall: TextStyle(
-          color: appTheme.gray500,
-          fontSize: 12.fSize,
+          color: colorScheme.secondaryContainer,
+          fontSize: 8.fSize,
           fontFamily: 'DM Sans',
           fontWeight: FontWeight.w400,
         ),
@@ -107,16 +107,22 @@ class TextThemes {
           fontWeight: FontWeight.w400,
         ),
         labelMedium: TextStyle(
-          color: appTheme.blueGray100,
-          fontSize: 11.fSize,
+          color: colorScheme.onSecondaryContainer,
+          fontSize: 10.fSize,
           fontFamily: 'DM Sans',
-          fontWeight: FontWeight.w700,
+          fontWeight: FontWeight.w500,
+        ),
+        labelSmall: TextStyle(
+          color: colorScheme.onPrimaryContainer.withOpacity(1),
+          fontSize: 9.fSize,
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w600,
         ),
         titleLarge: TextStyle(
           color: appTheme.black900,
-          fontSize: 20.fSize,
+          fontSize: 21.fSize,
           fontFamily: 'Inter',
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w600,
         ),
         titleMedium: TextStyle(
           color: colorScheme.onSecondaryContainer,
@@ -139,7 +145,7 @@ class ColorSchemes {
     // Primary colors
     primary: Color(0XFF5BA82C),
     primaryContainer: Color(0XFFC10E19),
-    secondaryContainer: Color(0XFFB4B4BE),
+    secondaryContainer: Color(0XFFABABAB),
 
     // Error colors
     errorContainer: Color(0XFF555555),

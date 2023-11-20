@@ -61,15 +61,9 @@ class AppNavigationScreen extends StatelessWidget {
                             ),
                             _buildScreenTitle(
                               context,
-                              screenTitle: "Map".tr,
-                              onTapScreenTitle: () =>
-                                  onTapScreenTitle(AppRoutes.mapScreen),
-                            ),
-                            _buildScreenTitle(
-                              context,
-                              screenTitle: "Hospitals List - Container".tr,
+                              screenTitle: "Map - Container".tr,
                               onTapScreenTitle: () => onTapScreenTitle(
-                                  AppRoutes.hospitalsListContainerScreen),
+                                  AppRoutes.mapContainerScreen),
                             ),
                             _buildScreenTitle(
                               context,

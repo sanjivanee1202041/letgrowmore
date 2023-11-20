@@ -20,12 +20,13 @@ class SplashScreen extends StatelessWidget {
     return BlocBuilder<SplashBloc, SplashState>(builder: (context, state) {
       return SafeArea(
           child: Scaffold(
-              body: SizedBox(
-                  width: double.maxFinite,
+              body: Container(
+                  width: 362.h,
+                  padding: EdgeInsets.symmetric(horizontal: 19.h),
                   child: CustomImageView(
-                      imagePath: ImageConstant.img4222Copy1,
-                      height: 450.v,
-                      width: 430.h,
+                      imagePath: ImageConstant.img4222Copy1263x333,
+                      height: 307.v,
+                      width: 322.h,
                       alignment: Alignment.center))));
     });
   }
